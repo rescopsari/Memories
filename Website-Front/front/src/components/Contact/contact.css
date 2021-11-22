@@ -1,0 +1,85 @@
+:root {
+    --blue : 207 22% 60%; /** #839cb0; **/
+    --orange : 35 100% 56%; /** #ffa11f **/
+    --dark-orange : 24 100% 56%;
+    --title-size:1.3rem;
+    --size: 1.1rem;
+    --font-family : 'Arapey', serif;
+}
+
+body {
+    background-color: hsl(var(--blue) / 1);
+    font-family: var(--font-family);
+    height: 100vh;
+}
+
+.main-contact > h1 {
+    margin-top: 70px;
+    font-size: 3em;
+    text-align:center;
+    color: hsl(var(--orange) / 1);
+}
+
+.section-contact {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.section-contact p {
+    width: 80%;
+    margin: 20px auto;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+}
+
+.section-contact label {
+    display: block;
+    margin: 10px 0;
+    font-size: var(--title-size);
+}
+
+.section-contact input {
+    border: none;
+    padding: 5px 10px;
+    font-size: var(--size);
+    width: 100%;
+    border-radius: 5px;
+}
+
+.section-contact input[type=submit] {
+    background-color: hsl(var(--orange) / 1);
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 225px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+input[type=submit]:hover {
+    background-color: hsl(var(--dark-orange) / 1)
+}
+
+textarea {
+    border: none;
+    padding: 5px 10px;
+    font-size: var(--size);
+    width: 100%;
+    resize: none;
+    border-radius: 5px;
+}
+
+.text-center {
+    text-align: center;
+}
+@media screen and (min-width:968px) {
+    .section-contact{
+        width: 40%;
+    }
+    .section-contact input[type=submit]{
+        font-size: 1.5rem;
+    }
+    
+}

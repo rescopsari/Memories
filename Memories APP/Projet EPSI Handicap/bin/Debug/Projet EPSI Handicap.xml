@@ -1,0 +1,214 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+Projet EPSI Handicap
+</name>
+</assembly>
+<members>
+<member name="T:Projet_EPSI_Handicap.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:Projet_EPSI_Handicap.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:Projet_EPSI_Handicap.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="M:Projet_EPSI_Handicap.Dashboard.DisplayForm(System.Windows.Forms.Form,System.Boolean)">
+ <summary>
+ Affiche un formulaire du projet dans le conteneur MainPanel
+ </summary>
+ <param name="Formulaire">WindowsForm à affiché dans MainPanel</param>
+ <param name="ClosePreviousForm">Quand le paramètre est sur true (par défaut) le formulaire précédemment ouvert (grâce à l'appel précédent de cette méthode) sera fermé</param>
+</member>
+<member name="M:Projet_EPSI_Handicap.Fonctions.GetTaskByName(System.String)">
+ <summary>
+ Retourne l'objet task correspondant dans les liste des tâches (Tasklist) par le biais de son nom
+ </summary>
+ <param name="Taskname">Le nom de la tâche à récupéré</param>
+ <returns>Un objet Task si elle à été trouvée par son nom SINON NOTHING</returns>
+</member>
+<member name="M:Projet_EPSI_Handicap.Fonctions.MySQL_NEW_CONNECTION">
+ <summary>
+ Ouvre une nouvelle connexion à la base de donnée en fonction des paramètres de connexion configurée dans la région 'Variables de configuration'
+ </summary>
+ <returns>Une connexion de type MySqlConnection ouverte et prête à être utilisée dans la propriétée 'MySqlCommand' des objets MySqlCommand. Si la connexion à échouée, la fonction retourne nothing</returns>
+</member>
+<member name="M:Projet_EPSI_Handicap.Fonctions.MySQL_GetReponse(System.String)">
+ <summary>
+ Initialise une nouvelle connexion à la BDD, exécute une requête spécifique, puis retourne une réponse (un objet de type MySqlDataReader) afin d'y traiter les données reçues.
+ </summary>
+ <param name="SQL_REQUEST">La requête SQL à exécuter</param>
+ <returns>Une réponse du serveur (objet MySqlDataReader) à traiter ou Nothing en cas d'erreur d'éxécution (ou l'absence de donnée ?)</returns>
+</member>
+<member name="M:Projet_EPSI_Handicap.Fonctions.MySQL_REQUEST_EXEC(System.String)">
+ <summary>
+ Ouvre une nouvelle connexion MySQL au serveur puis execute une requête MySQL (sans retour attendu)
+ </summary>
+ <param name="SQL_REQUEST">La requête SQL à éxécuter</param>
+ <returns>Retourne TRUE si la requête à été exécutée sans erreur sinon FALSE</returns>
+</member>
+<member name="M:Projet_EPSI_Handicap.Fonctions.LoginUser(System.String,System.String)">
+ <summary>
+ Vérifie dans la base de donnée si l'email et le mot de passe fournie en argument sont valides
+ </summary>
+ <param name="Email">L'adresse e-mail de l'utilisateur</param>
+ <param name="password">Le mot de passe de l'utilisateur</param>
+ <returns>TRUE si l'email ET le MDP de l'utilisateur est valide sinon FALSE</returns>
+</member>
+<member name="M:Projet_EPSI_Handicap.Fonctions.GetClientID(System.String)">
+ <summary>
+ Récupère l'identifiant du client (dans la table user) par rapport à son addresse e-mail
+ </summary>
+</member>
+<member name="M:Projet_EPSI_Handicap.Fonctions.GetUserInfo(System.String)">
+ <summary>
+ Récupère toutes les informations sur un client à partir de son e-mail, les places adéquatement dans les propriétées d'un objet 'user' puis retourne l'objet
+ </summary>
+ <param name="USER_EMAIL">L'adresse e-mail de connexion de l'utilisateur pour lequelle ces informations doivent être récupérées</param>
+ <returns>Un objet User sinon Nothing</returns>
+</member>
+<member name="M:Projet_EPSI_Handicap.Fonctions.GetCategories">
+ <summary>
+ Récupère toutes les catégories de tâches préconfigurées disponible dans la base de donnée
+ </summary>
+</member>
+<member name="M:Projet_EPSI_Handicap.Fonctions.UpdateStatus">
+ <summary>
+ Met à jour la variable StatutList contenant une liste des status à attribuer à une tâche
+ </summary>
+</member>
+<member name="T:Projet_EPSI_Handicap.Fonctions.Categorie">
+ <summary>
+ Classe permettant de définir une catégorie de tâche prédéfinie dans la base de donnée
+ </summary>
+</member>
+<member name="F:Projet_EPSI_Handicap.Fonctions.Categorie.id">
+ <summary>
+ L'identifiant uniquement de cette catégorie (permettant de le retrouver dans la table categorie)
+ </summary>
+</member>
+<member name="F:Projet_EPSI_Handicap.Fonctions.Categorie.title">
+ <summary>
+ Le titre de la catégorie
+ </summary>
+</member>
+<member name="F:Projet_EPSI_Handicap.Fonctions.Categorie.color">
+ <summary>
+ Utilisez un code RGB séparé par des virgules pour cette valeure (ex: 64, 64, 64)
+ </summary>
+</member>
+<member name="F:Projet_EPSI_Handicap.Fonctions.Categorie.thumbnail">
+ <summary>
+ L'icone de la catégorie. Mettre UNIQUEMENT un lien dans cette propriétée
+ </summary>
+</member>
+<member name="T:Projet_EPSI_Handicap.Fonctions.User">
+ <summary>
+ Classe représentant un utilisateur (de la table user) de la base de donnée
+ </summary>
+</member>
+<member name="F:Projet_EPSI_Handicap.Fonctions.User.user_id">
+ <summary>
+ L'Identifiant (Clé primaire auto-incrémentée) de la table de la base de donnée contenant les utilisateurs afin de pouvoir identifier un utilisateur
+ </summary>
+</member>
+<member name="F:Projet_EPSI_Handicap.Fonctions.User.email">
+ <summary>
+ L'adresse e-mail de l'utilisateur (utilisé par ce dernier durant le processus de connexion)
+ </summary>
+</member>
+<member name="F:Projet_EPSI_Handicap.Fonctions.User.password">
+ <summary>
+ Le mot de passe en clair de l'utilisateur (utilisé par ce dernier durant le processus de connexion)
+ </summary>
+</member>
+<member name="F:Projet_EPSI_Handicap.Fonctions.User.ip">
+ <summary>
+ La dernière adresse IPv4 du client connu durant sa dernière connexion
+ </summary>
+</member>
+<member name="F:Projet_EPSI_Handicap.Fonctions.User.is_activ">
+ <summary>
+ (Normalement valeure booléane) permettant de spécifier si le compte peut être utilisé ou pas, ou s'il est bloqué ou non
+ </summary>
+</member>
+<member name="F:Projet_EPSI_Handicap.Fonctions.User.last_login">
+ <summary>
+ (Normalement une date) précisant la dernière fois que l'utilisateur s'est connecté
+ </summary>
+</member>
+<member name="F:Projet_EPSI_Handicap.Fonctions.User.phone_number">
+ <summary>
+ Le numéro de téléphone de l'utilisateur
+ </summary>
+</member>
+<member name="F:Projet_EPSI_Handicap.Fonctions.User.lastname">
+ <summary>
+ Le nom de famille de l'utilisateur
+ </summary>
+</member>
+<member name="F:Projet_EPSI_Handicap.Fonctions.User.firstname">
+ <summary>
+ Le prénom de l'utilisateur
+ </summary>
+</member>
+<member name="T:Projet_EPSI_Handicap.Fonctions.Statut">
+ <summary>
+ Classe représentant un statut attribuable dans la tâche de la base donnée
+ </summary>
+</member>
+<member name="F:Projet_EPSI_Handicap.Fonctions.Statut.id">
+ <summary>
+ L'ID du statut dans la base de donnée
+ </summary>
+</member>
+<member name="F:Projet_EPSI_Handicap.Fonctions.Statut.title">
+ <summary>
+ Le titre du statut
+ </summary>
+</member>
+<member name="F:Projet_EPSI_Handicap.Fonctions.Statut.slug">
+ <summary>
+ Le titre sans les caractères spéciaux (pour faciliter les recherches)
+ </summary>
+</member>
+<member name="T:Projet_EPSI_Handicap.Fonctions.Task">
+ <summary>
+ Classe représentant une tâche (table task de la BDD)
+ </summary>
+</member>
+<member name="P:Projet_EPSI_Handicap.Fonctions.Task.created_on">
+ <summary>
+ L'objet de type date spécifiant la date de création de la tâche
+ </summary>
+</member>
+<member name="M:Projet_EPSI_Handicap.Fonctions.Task.UpdateOnDatabase">
+ <summary>
+ Met à jour les propriétée de cette tâche en modifiant les colonnes de la donnée ayant l'ID de la tâche par les valeures adéquat des variables de l'objet.
+ </summary>
+ <returns>TRUE si l'opération à réussi sinon FALSE</returns>
+</member>
+<member name="M:Projet_EPSI_Handicap.Fonctions.Task.Delete">
+ <summary>
+ Cache la tache dans la base de donnée en spécifiant son statut sur 3 (id_status = 3)
+ </summary>
+ <returns>TRUE si l'opération a réussi, sinon FALSE</returns>
+</member>
+<member name="M:Projet_EPSI_Handicap.Fonctions.Task.SetStatut(System.Int32)">
+ <summary>
+ Définis le statut d'une tâche et met à jour les colonnes dans la base de donnée pour cette tâche
+ </summary>
+ <param name="Status">Définir sur TRUE pour indiquer que la tâche à été réalisée sinon sur FALSE pour indiquer qu'elle est à faire</param>
+ <returns>TRUE si l'opération a réussie sinon FALSE</returns>
+</member>
+</members>
+</doc>

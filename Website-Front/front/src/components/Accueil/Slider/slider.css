@@ -1,0 +1,21 @@
+.w-100{
+    height :250px
+}
+.carousel-control-prev{
+    display: none!important;
+}
+.carousel-indicators{
+    display: none!important;
+}
+.carousel-control-next-icon{
+    display: none!important;
+}
+
+@media  screen and (min-width : 968px) {
+
+.w-100{
+    height: 900px;
+    width: 1000px!important;
+}
+    
+}

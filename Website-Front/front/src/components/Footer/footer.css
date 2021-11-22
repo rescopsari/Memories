@@ -1,0 +1,122 @@
+.footer{
+    height: 300px;
+    margin-top:40px;
+    border-top: 1px solid #fff;
+  }
+  .footer-logos{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .footer-logo{
+    width: 75px;
+    height: 60px;
+    padding-top: 20px;
+  }
+  .footer-list{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    list-style: none;
+    padding-left: 0;
+    width: 100%;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  .logo-list{
+    color: #fff;
+    font-size: 45px;
+    text-decoration: none;
+  }
+  .footer-description{
+    padding-top: 53px;
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+  .footer-description h2 {
+    margin: 0 0 15px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  .footer-description p {
+    line-height: 1.5em;
+    font-size: 1em;
+    color: #fff;
+  }
+  .title-contact-footer{
+    letter-spacing: 0.2rem;
+    font-weight: 600;
+    font-size: 12px;
+    text-transform: uppercase;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    
+  }
+  .title-contact-footer svg{
+    padding-right: 10px;
+  }
+  .description-contact-footer{
+    color:#fff;
+  }
+  .contact-tel-footer{
+    padding-left: 10px;
+  }
+  .contact-email-footer{
+    padding-left: 10px;
+  }
+  
+  @media  screen and (min-width : 960px) {
+  
+  .footer{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    border-top: 1px solid rgba(255,255,255,0.2); ;
+    height: 450px;
+    width: 100%;
+  }
+  .footer-logos{
+   
+    width: 50%;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .footer-logo{
+    width: 150px;
+    height: 120px;
+  }
+  .footer-description{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 50%;
+  }
+  
+  .logo-list{
+    font-size: 70px;
+  }
+
+  .footer-description h2{
+    font-size: 2.5rem;
+  }
+  .footer-description p{
+    font-size: 1.8rem;
+  }
+  .title-contact-footer{
+      font-size: 2rem;
+  }
+  
+  }

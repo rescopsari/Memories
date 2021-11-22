@@ -1,0 +1,157 @@
+.header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+.navbar {
+  background-color: #839cb0;
+  display: flex;
+  justify-content: space-between;
+  height: 60px;
+  box-shadow: 0px 4px 8px #fff;
+}
+
+.navbar__logo-img {
+  position: absolute;
+  top: -0.6rem;
+  width: 80px;
+  height: 80px;
+}
+
+.navbar__global {
+  display: none;
+}
+
+.navbar__active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffa11f;
+  height: 100vh;
+  position: absolute;
+  width: 55%;
+  top: 0;
+  right: 0;
+  z-index: 999;
+  animation: fadeInRight 0.3s forwards;
+}
+
+.navbar__list {
+  list-style: none;
+  width: 100%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding-left: 0;
+}
+.navbar__link {
+  display: flex;
+  align-items: center;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+}
+.navbar__link-icon {
+  padding-right: 5px;
+}
+.close__icon {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.75rem;
+  color: #fff;
+  font-size: 2rem;
+}
+.navbar__burger {
+  color: #fff;
+  position: absolute;
+  top: 0.2rem;
+  right: 0.75rem;
+  font-size: 2rem;
+}
+
+/*=============== Media Queries ================*/
+
+@media screen and (min-width: 968px) {
+  .header {
+    position: initial;
+  }
+  .navbar {
+    height: 95px;
+  }
+  .navbar__burger {
+    display: none;
+  }
+  .navbar__close {
+    display: none;
+  }
+  .navbar__global {
+    display: flex;
+    justify-content: right;
+    width: 50%;
+  }
+  .navbar__logo-img {
+    width: 120px;
+    height: 120px;
+  }
+  .navbar__list {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .navbar__item {
+    padding-right: 50px;
+  }
+  .navbar__link {
+    font-size: 1.6rem;
+  }
+  .navbar__active {
+    display: flex;
+  align-items: center;
+  justify-content: center;
+  position: initial;
+  width: 50%;
+  height: 0%;
+  top: 0;
+  right: 0;
+  z-index: 999;
+  animation: none;
+  }
+}
+
+/*=============== Keyframes ===================*/
+@-webkit-keyframes fadeInRight {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+.animate__fadeInRight {
+  -webkit-animation-name: fadeInRight;
+  animation-name: fadeInRight;
+}
